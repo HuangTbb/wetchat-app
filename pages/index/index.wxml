@@ -1,7 +1,24 @@
 <!-- index.wxml -->
-<view>
-  <view>数字：{{n}}</view>
+<view class="main">
   <view>
-    <button bindtap="addone">+1</button>
+    <button bindtap="start">开始游戏</button>
+  </view>
+  <view>
+    <view class="circle">{{guess? password: "?"}}</view>
+  </view>
+  <view>开始猜数字</view>
+  <view class="number">
+    <picker class="numberX" bindchange="setX" value="{{x}}" range="{{arrayX}}">
+      <view class="picker">{{x}}</view>
+    </picker>
+    <picker class="numberY" bindchange="setY" value="{{y}}" range="{{arrayY}}">
+      <view class="picker">{{y}}</view>
+    </picker>
+  </view>
+  <view>
+    <button bindtap="guess" class="comfirm">确定</button>
+  </view>
+  <view>
+    <text>{{message}}</text>
   </view>
 </view>
